@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="format-detection" content="email=no" />
+    <meta name="wap-font-scale"  content="no" />
+    <meta name="viewport" content="user-scalable=no, width=device-width" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>后台管理系统</title>
+    <link href="css/ax.css" rel="stylesheet" type="text/css" >
+    <link href="css/ax-response.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+<div class="ax-padding">
+    <div class="ax-grid ax-space-md">
+        <ul class="ax-grid-inner">
+            <li class="ax-grid-block ax-col-24"><section class="demo-section-border">
+                <div class="ax-row ax-statistics">
+                    <div class="ax-col ax-col-6 ax-bglit-danger">
+                        <a href="###" class="ax-item"><span class="ax-text"><span class="ax-font-light">6509</span><i class="ax-dot"></i></span><span class="ax-title">总登录(次)</span></a>
+                    </div>
+                    <div class="ax-col ax-col-6 ax-bglit-primary">
+                        <a href="###" class="ax-item"><span class="ax-text"><span class="ax-font-light">8</span><i class="ax-dot"></i></span><span class="ax-title">待办理(个)</span></a>
+                    </div>
+                    <div class="ax-col ax-col-6 ax-bglit-success">
+                        <a href="###" class="ax-item"><span class="ax-text"><span class="ax-font-light">188</span></span><span class="ax-title">已办理(个)</span></a>
+                    </div>
+                    <div class="ax-col ax-col-6 ax-bglit-ad">
+                        <a href="###" class="ax-item"><span class="ax-text"><span class="ax-font-light">650</span><i class="ax-arrow">NEW</i></span><span class="ax-title">其他(个)</span></a>
+                    </div>
+                </div>
+            </section></li>
+            <li class="ax-grid-block ax-col-8"><section class="demo-section-border"><div id="line" style="height:200px;"></div></section></li>
+            <li class="ax-grid-block ax-col-8"><section class="demo-section-border"><div id="bar" style="height:200px;"></div></section></li>
+            <li class="ax-grid-block ax-col-8"><section class="demo-section-border"><div id="line2" style="height:200px;"></div></section></li>
+            <li class="ax-grid-block ax-col-24"><section class="demo-section-border">
+                <div id="map-add" style="height:280px;">
+                    <div class="ax-empty">
+                        <div class="ax-icon"><span class="ax-iconfont ax-icon-empty"></span></div>
+                        <div class="ax-title">没有内容</div>
+                    </div>
+                </div>
+            </section></li>
+        </ul>
+    </div>
+</div>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/ax.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/plugins/echarts/echarts.min.js"></script>
+<script type="text/javascript" src="/plugins/echarts/macarons.js"></script>
+<script type='text/javascript'>
+    //折线图
+    optionLine = {
+        title: {
+            text: ''
+        },
+        legend: {
+            data: ['本周客流', '上周客流'],
+            align: 'left',
+            top:'4'
+        },
+        xAxis: {
+            type: 'category',
+            data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+        },
+        yAxis: {
+            name: '单位(万)',
+            type: 'value',
+        },
+        series: [{
+            name:'本周客流',
+            data: [2.2, 2.5, 3.5, 2.8, 2.0, 4.5, 5.2],
+            type: 'line'
+        },{
+            name:'上周客流',
+            data: [1.2, 2.1, 2.9, 3.5, 2.4, 5.6, 4.8],
+            type: 'line'
+        }],
+        tooltip: {
+            trigger: 'axis'
+        },
+        grid: {
+            show: false,
+            borderColor: '#ebebeb',
+            x: 22,
+            x2: 0,
+            y: 36,
+            y2:0,
+            height: 128//170-100(198-128)
+        },
+
+    };
+    var domLine = document.getElementById("line");
+    var chartLine = echarts.init(domLine, 'macarons');
+    chartLine.setOption(optionLine, true);
+
+    var domLine2 = document.getElementById("line2");
+    var chartLine2 = echarts.init(domLine2, 'macarons');
+    chartLine2.setOption(optionLine, true);
+    //
+    //柱状图
+    optionBar = {
+            title: {
+                text: ''
+            },
+            legend: {
+                data: ['安防', '养护', '环卫'],
+                align: 'left',
+                top:'4',
+                itemWidth:12,
+                itemHeight:12,
+ 
+            },
+            xAxis: {
+                type: 'category',
+                data: [ '6月', '7月', '8月', '9月', '10月', '11月']
+            },
+            yAxis: {
+                name: '单位(万)',
+                type: 'value',
+            },
+            series: [ {
+                name:'安防',
+                type:'bar',
+                barWidth : 10,
+                data:[332, 301, 334, 390, 330, 320],
+                itemStyle: {
+                    barBorderRadius: [10, 10, 0, 0],
+                },
+            },
+                {
+                    name:'养护',
+                    type:'bar',
+                    barWidth : 10,
+                    data:[132, 101, 134, 90, 230, 210],
+                    itemStyle: {
+                        barBorderRadius: [10, 10, 0, 0],
+                    },
+                },
+                {
+                    name:'环卫',
+                    type:'bar',
+                    barWidth : 10,
+                    data:[182, 191, 234, 290, 330, 310],
+                    itemStyle: {
+                        barBorderRadius: [10, 10, 0, 0],
+                    },
+                }],
+            tooltip: {
+                trigger: 'axis'
+            },
+            grid: {
+                show:false,
+                x: 32,
+                x2: 0,
+                y: 36,
+                y2:0,
+                height: 128//170-100(198-128)
+            },
+ 
+        };
+        var domBar = document.getElementById("bar");
+        var chartBar = echarts.init(domBar, 'macarons');
+        chartBar.setOption(optionBar, true);
+
+</script>
+
+</body>
+</html>

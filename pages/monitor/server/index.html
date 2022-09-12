@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="format-detection" content="email=no" />
+    <meta name="wap-font-scale"  content="no" />
+    <meta name="viewport" content="user-scalable=no, width=device-width" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>服务器信息</title>
+    <link href="../../../css/font.css" rel="stylesheet" type="text/css" />
+    <link href="../../../css/ax.css" rel="stylesheet" type="text/css" >
+    <link href="../../../css/ax-response.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+<div class="ax-padding">
+
+    <div class="ax-grid ax-space-md">
+        <ul class="ax-grid-inner">
+            <li class="ax-grid-block ax-col-24"><section class="demo-section-border">
+                <div class="ax-row ax-statistics">
+                    <div class="ax-col ax-col-12 ax-grid-block ">
+                        <div class="ax-alert ax-success ax-lg">
+                            <i class="ax-iconfont ax-icon-cube-fill"></i>
+                            <div>
+                                <div class="ax-title">Centos8 服务器A</div>
+                                <div class="ax-des">IP: 192.0.0.1 RAM:32G HD:1T</div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                    <div class="ax-col ax-col-12 ax-grid-block ">
+                        <div class="ax-alert ax-success ax-lg">
+                            <i class="ax-iconfont ax-icon-cube-fill"></i>
+                            <div>
+                                <div class="ax-title">Centos8 服务器B</div>
+                                <div class="ax-des">IP: 192.0.0.1 RAM:32G HD:1T</div>
+                            </div>
+                        </div>
+                    
+                    </div>
+                </div>
+            </section></li>
+            <li class="ax-grid-block ax-col-12"><section class="demo-section-border"><div id="chart01"></div></section></li>
+            <li class="ax-grid-block ax-col-12"><section class="demo-section-border"><div id="chart02"></div></section></li>
+
+            <li class="ax-grid-block ax-col-12"><section class="demo-section-border"><div id="chart03"></div></section></li>
+            <li class="ax-grid-block ax-col-12"><section class="demo-section-border"><div id="chart04"></div></section></li>
+        </ul>
+    </div>
+
+    
+    
+     
+</div>
+
+<script src="../../../js/jquery.min.js" type="text/javascript"></script>
+<script src="../../../js/ax.min.js" type="text/javascript"></script>
+<script src="../../../main.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../../plugins/apexcharts/apexcharts.min.js"></script>
+<script src="../../api/menu/index.js" type="text/javascript"></script>
+<script type='text/javascript'>
+    //折线图左右渐变 01
+    var options01 = {
+        series: [{
+            name: 'Likes',
+            data: [4, 3, 10, 9, 29, 19, 22, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5]
+        }],
+        chart: {
+            height: 300,
+            type: 'line',
+        },
+        stroke: {
+            curve: 'smooth'
+        },
+        xaxis: {
+            type: 'datetime',
+            categories: ['1/11/2000', '2/11/2000', '3/11/2000', '4/11/2000', '5/11/2000', '6/11/2000', '7/11/2000', '8/11/2000', '9/11/2000', '10/11/2000', '11/11/2000', '12/11/2000', '1/11/2001', '2/11/2001', '3/11/2001','4/11/2001' ,'5/11/2001' ,'6/11/2001'],
+            tickAmount: 10,
+            labels: {
+                formatter: function(value, timestamp, opts) {
+                    return opts.dateFormatter(new Date(timestamp), 'dd MMM')
+                }
+            }
+        },
+        title: {
+            text: '服务器A',
+            align: 'left',
+            style: {
+                fontSize: "16px",
+
+            }
+        },
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shade: 'dark',
+                gradientToColors: [ '#FDD835'],
+                shadeIntensity: 1,
+                type: 'horizontal',
+                opacityFrom: 1,
+                opacityTo: 1,
+                stops: [0, 100, 100, 100]
+            },
+        },
+        yaxis: {
+            min: -10,
+            max: 40,
+            title: {
+                text: '',
+            },
+        }
+    };
+    var chart01 = new ApexCharts(document.querySelector("#chart01"), options01);
+    chart01.render();
+
+
+    //折线图左右渐变 02
+    var options02 = {
+        series: [{
+            name: 'Likes',
+            data: [4, 3, 10, 9, 29, 19, 22, 9, 12, 7, 19, 5, 13, 9, 17, 2, 7, 5]
+        }],
+        chart: {
+            height: 300,
+            type: 'line',
+        },
+        stroke: {
+            curve: 'smooth'
+        },
+        xaxis: {
+            type: 'datetime',
+            categories: ['1/11/2000', '2/11/2000', '3/11/2000', '4/11/2000', '5/11/2000', '6/11/2000', '7/11/2000', '8/11/2000', '9/11/2000', '10/11/2000', '11/11/2000', '12/11/2000', '1/11/2001', '2/11/2001', '3/11/2001','4/11/2001' ,'5/11/2001' ,'6/11/2001'],
+            tickAmount: 10,
+            labels: {
+                formatter: function(value, timestamp, opts) {
+                    return opts.dateFormatter(new Date(timestamp), 'dd MMM')
+                }
+            }
+        },
+        title: {
+            text: '服务器A',
+            align: 'left',
+            style: {
+                fontSize: "16px",
+
+            }
+        },
+        fill: {
+            type: 'gradient',
+            gradient: {
+                shade: 'dark',
+                gradientToColors: [ '#FDD835'],
+                shadeIntensity: 1,
+                type: 'horizontal',
+                opacityFrom: 1,
+                opacityTo: 1,
+                stops: [0, 100, 100, 100]
+            },
+        },
+        yaxis: {
+            min: -10,
+            max: 40,
+            title: {
+                text: '',
+            },
+        }
+    };
+    var chart02 = new ApexCharts(document.querySelector("#chart02"), options02);
+    chart02.render();
+
+    //渐变面积图重叠 03
+    var options03 = {
+            series: [{
+                name: 'series1',
+                data: [71, 20, 48, 91, 42, 109, 100]
+            }, {
+                name: 'series2',
+                data: [21, 42, 85, 32, 34, 82, 41]
+            }],
+            chart: {
+                height: 300,
+                type: 'area'
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shadeIntensity: 1,
+                    inverseColors: false,
+                    opacityFrom: 0.45,
+                    opacityTo: 0.05,
+                    stops: [20, 100, 100, 100]
+                },
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'datetime',
+                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+            },
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
+        };
+ 
+        var chart03 = new ApexCharts(document.querySelector("#chart03"), options03);
+        chart03.render();
+
+        //渐变面积图重叠 04
+        var options04 = {
+            series: [{
+                name: 'series1',
+                data: [71, 20, 48, 91, 42, 109, 100]
+            }, {
+                name: 'series2',
+                data: [21, 42, 85, 32, 34, 82, 41]
+            }],
+            chart: {
+                height: 300,
+                type: 'area'
+            },
+            fill: {
+                type: 'gradient',
+                gradient: {
+                    shadeIntensity: 1,
+                    inverseColors: false,
+                    opacityFrom: 0.45,
+                    opacityTo: 0.05,
+                    stops: [20, 100, 100, 100]
+                },
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                type: 'datetime',
+                categories: ["2018-09-19T00:00:00.000Z", "2018-09-19T01:30:00.000Z", "2018-09-19T02:30:00.000Z", "2018-09-19T03:30:00.000Z", "2018-09-19T04:30:00.000Z", "2018-09-19T05:30:00.000Z", "2018-09-19T06:30:00.000Z"]
+            },
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
+        };
+ 
+        var chart04 = new ApexCharts(document.querySelector("#chart04"), options04);
+        chart04.render();
+
+
+
+</script>
+
+<script src="../../api/menu/index.js" type="text/javascript"></script>
+
+
+</body>
+</html>

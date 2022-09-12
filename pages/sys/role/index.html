@@ -1,0 +1,341 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="format-detection" content="email=no" />
+    <meta name="wap-font-scale"  content="no" />
+    <meta name="viewport" content="user-scalable=no, width=device-width" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>角色权限</title>
+    <link href="../../../css/font.css" rel="stylesheet" type="text/css" />
+    <link href="../../../css/ax.css" rel="stylesheet" type="text/css" >
+    <link href="../../../css/ax-response.css" rel="stylesheet" type="text/css" >
+    <link href="../../../plugins/sweetalert2/sweetalert2.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+<div class="ax-padding">
+
+    <div class="ax-row ax-split">
+        <span class="ax-gutter-xxs"></span>
+        <div class="ax-col ax-col-24"><section class="demo-section-border">
+            <div class="ax-grid ax-space-md">
+                <ul class="ax-grid-inner">
+                    <li class="ax-grid-block ax-col-24"><section class="demo-section-border">
+                        <div class="ax-search ax-dark">
+                            <div class="ax-search-center">
+                                <i class="ax-iconfont ax-icon-search ax-adorn"></i>
+                                <input name="username" placeholder="输入关键字..." type="text" data-list="Apple苹果, Banana香蕉, Tomato西红柿, Grape葡萄, Haw山楂, Lemon柠檬, Orange橙子">
+                                <span class="ax-operate"><a href="###" class="ax-iconfont ax-icon-close ax-reset"></a><a href="###" class="ax-iconfont ax-icon-mic"></a><a href="###" class="ax-iconfont ax-icon-camera"></a><a href="###" class="ax-iconfont ax-icon-down ax-toggle"></a></span>
+                            </div>
+                            <a href="###" class="ax-search-end">搜索一下</a>
+                        </div>                                        
+                    </section></li>
+                    <li class="ax-grid-block ax-col-24"><section class="demo-section-border">
+                        <!-- 权限按钮 -->
+                        <div class="ax-flex-row">
+                            <div class="ax-flex-block ax-align-left">
+                                <span class="ax-buoy"><i>总访问</i><i>256</i></span>
+                                <span class="ax-buoy ax-primary"><i>总新增</i><i>256</i></span>
+                                <span class="ax-buoy ax-success"><i>总编辑</i><i>256</i></span>
+                                <span class="ax-buoy ax-danger"><i>总删除</i><i>256</i></span>
+
+                            </div>
+                            <div class="ax-flex-block ax-align-right">
+                                <a onclick="add()" class="ax-btn ax-primary ax-xs">添加</a>
+                                <a href="###" class="ax-btn ax-primary ax-xs">导出</a>
+                            </div>
+                        </div>
+                        <div class="ax-break-md"></div>
+                        <!-- table -->
+                        <table class="ax-table ax-border-tb ax-hover">
+                            <thead>
+                            <tr>
+                                <th>部门</th>
+                                <th>岗位</th>
+                                <th>年度保底</th>
+                                <th>岗位价值</th>
+                                <th>姓名</th>
+                                <th>平均年薪</th>
+                                <th>阶段考核</th>
+                                <th>分配比例</th>
+                                <th>分配金额(元)</th>
+                                <th>激励股数</th>
+                                <th style="width:110px;">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>董事会</td>
+                                <td>董事长</td>
+                                <td><span class="ax-color-warning">1000000</span></td>
+                                <td>86</td>
+                                <td>马云</td>
+                                <td>200000</td>
+                                <td>600</td>
+                                <td>16%</td>
+                                <td>20000</td>
+                                <td>300000</td>
+                                <td><div class="ax-operate"><a onclick="look()" class="ax-iconfont ax-icon-eye-fill" title="查看"></a><a onclick="edit()" class="ax-iconfont ax-icon-editing-fill" title="编辑"></a><a onclick="del()" class="ax-iconfont ax-icon-trash-alt-fill" title="删除"></a></div></td>
+                            </tr>
+                            <tr class="selected">
+                                <td>董事会</td>
+                                <td>董事长</td>
+                                <td><span class="ax-color-warning">1000000</span></td>
+                                <td>86</td>
+                                <td>马云</td>
+                                <td>200000</td>
+                                <td>600</td>
+                                <td>16%</td>
+                                <td>20000</td>
+                                <td>300000</td>
+                                <td><div class="ax-operate"><a href="###" class="ax-iconfont ax-icon-eye-fill" title="查看"></a><a href="###" class="ax-iconfont ax-icon-editing-fill" title="编辑"></a><a href="###" class="ax-iconfont ax-icon-trash-alt-fill" title="删除"></a></div></td>
+                            </tr>
+                            <tr>
+                                
+                                <td>董事会</td>
+                                <td>董事长</td>
+                                <td><span class="ax-color-warning">1000000</span></td>
+                                <td>86</td>
+                                <td>马云</td>
+                                <td>200000</td>
+                                <td>600</td>
+                                <td>16%</td>
+                                <td>20000</td>
+                                <td>300000</td>
+                                <td><div class="ax-operate"><a href="###" class="ax-iconfont ax-icon-eye-fill" title="查看"></a><a href="###" class="ax-iconfont ax-icon-editing-fill" title="编辑"></a><a href="###" class="ax-iconfont ax-icon-trash-alt-fill" title="删除"></a></div></td>
+                            </tr>
+                            <tr>
+                                
+                                <td>董事会</td>
+                                <td>董事长</td>
+                                <td><span class="ax-color-warning">1000000</span></td>
+                                <td>86</td>
+                                <td>马云</td>
+                                <td>200000</td>
+                                <td>600</td>
+                                <td>16%</td>
+                                <td>20000</td>
+                                <td>300000</td>
+                                <td><div class="ax-operate"><a href="###" class="ax-iconfont ax-icon-eye-fill" title="查看"></a><a href="###" class="ax-iconfont ax-icon-editing-fill" title="编辑"></a><a href="###" class="ax-iconfont ax-icon-trash-alt-fill" title="删除"></a></div></td>
+                            </tr>
+                            <tr>
+                                <td>董事会</td>
+                                <td>董事长</td>
+                                <td><span class="ax-color-warning">1000000</span></td>
+                                <td>86</td>
+                                <td>马云</td>
+                                <td>200000</td>
+                                <td>600</td>
+                                <td>16%</td>
+                                <td>20000</td>
+                                <td>300000</td>
+                                <td><div class="ax-operate"><a href="###" class="ax-iconfont ax-icon-eye-fill" title="查看"></a><a href="###" class="ax-iconfont ax-icon-editing-fill" title="编辑"></a><a href="###" class="ax-iconfont ax-icon-trash-alt-fill" title="删除"></a></div></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        
+                        <!-- 分页 -->
+                        <div class="ax-pagination">
+                            <span>总共</span><span>200</span><span>个记录，当前第</span><span>8</span><span>页，每页</span><input type="text" value="15"><span>条数据</span>　<a href="###" class="ax-first">首页</a><a href="###" class="ax-prev">上一页</a><a href="###" class="ax-next">下一页</a><a href="###" class="ax-last">尾页</a>　<span>共142条，跳到</span><select><option selected>8</option><option>9</option></select><span>页</span>
+                        </div>
+                        
+                    </section></li>
+                </ul>
+            </div>
+        </section></div>
+    </div>
+     <!-- 抽屉新增 编辑页面 -->
+    <div class="ax-drawer" id="drawer01">
+        <div class="ax-drawer-overlay"></div>
+        <form id="regForm" >
+            <div class="ax-drawer-contain">
+                <a href="###" class="ax-drawer-close"><i class="ax-iconfont ax-icon-close"></i></a>
+                <div class="ax-drawer-title"><div class="ax-col ax-align-center">新增人员</div></div>
+                <div class="ax-break-line"></div>
+                <div class="ax-drawer-content">
+                    <div class="ax-padding">
+                        <div class="ax-form-group">
+                            
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">角色名称</div>
+                                <div class="ax-form-input"><input id="name" name="name" placeholder="输入角色名称" type="text"></div>
+                            </div>
+                            <div class="ax-break-md"></div>
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">权限字符</div>
+                                <div class="ax-form-input"><input name="3" placeholder="输入权限字符" type="text"></div>
+                            </div>
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">菜单权限</div>
+                                <div class="ax-form-input">
+                                    <div class="ax-break-md"></div>
+                                    <ul class="ax-tree ax-border" id="tree04"></ul>
+                                </div>
+                            </div>
+                            <div class="ax-break-md"></div>
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">权限类型</div>
+                                <div class="ax-form-input">
+                                    <select class="ax-select">
+                                        <option value="全部数据">全部数据</option>
+                                        <option value="自定义数据">自定义数据</option>
+                                        <option value="本部门数据">本部门数据</option>
+                                        <option value="本人数据">本人数据</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">自定义权限</div>
+                                <div class="ax-form-input">
+                                    <div class="ax-break-md"></div>
+                                    <ul class="ax-tree ax-border" id="tree03"></ul>
+                                </div>
+                            </div>
+                            <div class="ax-break-md"></div>
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">状态</div>
+                                <div class="ax-form-input"><input name="4" type="text"></div>
+                            </div>
+                            <div class="ax-break-md"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ax-break-line"></div>
+                <div class="ax-row ax-drawer-operate">
+                    <a onclick="reset()" class="ax-col ax-col-12 ax-color-ignore">取消</a>
+                    <span class="ax-gutter-line"></span>
+                    <a onclick="submit()" class="ax-col ax-col-12">确定</a>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+</div>
+
+<script src="../../../js/jquery.min.js" type="text/javascript"></script>
+<script src="../../../js/ax.min.js" type="text/javascript"></script>
+<script src="../../../main.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../../plugins/axTree/jquery.ztree.all.min.js"></script>
+<script type="text/javascript" src="../../../plugins/validate/jquery.validate.min.js"></script>
+<script type="text/javascript" src="../../../plugins/sweetalert2/sweetalert2.min.js"></script>
+<script src="../../../api/user/index.js" type="text/javascript"></script>
+<script type='text/javascript'>
+    function add(){
+        $("#drawer01").addClass("ax-drawer-show");
+    }
+    
+    function submit(){
+        $("#regForm").submit()
+        Swal.fire({
+            toast: true,
+            position: 'top',
+            icon: 'success',
+            title: '操作成功！',
+            showCloseButton:false,
+            text: '',
+            timer: 2000,
+        });
+
+    }
+    function reset(){
+        $("#regForm")[0].reset()
+    }
+    $(document).ready(function () {
+        /** 加载表格数据 */
+        
+        $("#regForm").validate({
+            debug:true,
+            rules: {
+                name: "required"
+            },
+            messages: {
+                name: "<div class='ax-color-danger'><span class='ax-iconfont ax-icon-close-o-fill'></span> 请输入用户名！</div>"
+            }
+        });
+
+        /** 加载树结构 */
+        var setting04 = {
+            view: {
+                enable: true,
+                chkDisabledInherit: true
+            },
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+        };
+        var zNodes04 =[
+            { id:1, pId:0, name:"北京市", isParent:true, open:true},
+            { id:2, pId:1, name:"朝阳区"},
+            { id:3, pId:1, name:"丰台区",chkDisabled:true,},
+            { id:4, pId:1, name:"海淀区"},
+            { id:5, pId:0, name:"广东省", isParent:true},
+            { id:6, pId:5, name:"广州市", isParent:true},
+            { id:7, pId:6, name:"花都区"},
+            { id:8, pId:6, name:"番禺区"},
+            { id:9, pId:6, name:"越秀区"},
+            { id:10, pId:5, name:"深圳市", isParent:true},
+            { id:11, pId:10, name:"福田区"},
+            { id:12, pId:10, name:"罗湖区",chkDisabled:true, checked:true,},
+            { id:13, pId:10, name:"龙岗区"},
+            { id:14, pId:5, name:"河源市"},
+            { id:15, pId:0, name:"湖南省", isParent:true},
+            { id:16, pId:15, name:"长沙市"},
+            { id:17, pId:15, name:"永州市",chkDisabled:true, checked:true,},
+            { id:18, pId:15, name:"株洲省"},
+        ];
+        $.fn.zTree.init($("#tree04"), setting04, zNodes04);
+
+        /** 加载树结构 */
+        var setting03 = {
+            view: {
+                enable: true,
+                chkDisabledInherit: true
+            },
+            check: {
+                enable: true
+            },
+            data: {
+                simpleData: {
+                    enable: true
+                }
+            },
+        };
+        var zNodes03 =[
+            { id:1, pId:0, name:"北京市", isParent:true, open:true},
+            { id:2, pId:1, name:"朝阳区"},
+            { id:3, pId:1, name:"丰台区",chkDisabled:true,},
+            { id:4, pId:1, name:"海淀区"},
+            { id:5, pId:0, name:"广东省", isParent:true},
+            { id:6, pId:5, name:"广州市", isParent:true},
+            { id:7, pId:6, name:"花都区"},
+            { id:8, pId:6, name:"番禺区"},
+            { id:9, pId:6, name:"越秀区"},
+            { id:10, pId:5, name:"深圳市", isParent:true},
+            { id:11, pId:10, name:"福田区"},
+            { id:12, pId:10, name:"罗湖区",chkDisabled:true, checked:true,},
+            { id:13, pId:10, name:"龙岗区"},
+            { id:14, pId:5, name:"河源市"},
+            { id:15, pId:0, name:"湖南省", isParent:true},
+            { id:16, pId:15, name:"长沙市"},
+            { id:17, pId:15, name:"永州市",chkDisabled:true, checked:true,},
+            { id:18, pId:15, name:"株洲省"},
+        ];
+        $.fn.zTree.init($("#tree03"), setting03, zNodes03);
+
+    });
+</script>
+
+  
+</body>
+</html>

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="format-detection" content="email=no" />
+    <meta name="wap-font-scale"  content="no" />
+    <meta name="viewport" content="user-scalable=no, width=device-width" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>登录</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="css/font.css" rel="stylesheet" type="text/css" />
+    <link href="css/ax.css" rel="stylesheet" type="text/css" >
+    <link href="css/ax-response.css" rel="stylesheet" type="text/css" >
+    <link href="css/login.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="ax-align-origin">
+
+    <div class="login ax-shadow-cloud ax-radius-md">
+        <div class="login-img ax-radius-top ax-radius-md ax-align-origin">
+            <i class="ax-iconfont ax-icon-me-f"></i>
+        </div>
+        <ul class="ax-emulate ">
+            <li class="block-login">
+                <form>
+                    <div class="ax-form-group">
+                        <div class="ax-flex-row">
+                            <div class="ax-form-con">
+                                <div class="ax-form-input"><span class="ax-pos-left" style="width: 2.4rem;"><i class="ax-iconfont ax-icon-me-fill"></i></span><input name="username" placeholder="输入登录名称" type="text"><span class="ax-pos-right"><a href="###" class="ax-iconfont ax-icon-close ax-val-none"></a></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ax-break-line ax-margin-lr"></div>
+
+                    <div class="ax-form-group">
+                        <div class="ax-flex-row">
+                            <div class="ax-form-con">
+                                <div class="ax-form-input"><span class="ax-pos-left" style="width:2.4rem;"><i class="ax-iconfont ax-icon-unlock-fill"></i></span>
+                                    <input name="password" placeholder="输入密码" type="password"><span class="ax-pos-right"><a href="###" class="ax-iconfont ax-icon-close ax-val-none"></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ax-break-line ax-margin-lr"></div>
+
+                    <div class="ax-form-group">
+                        <div class="ax-flex-row">
+                            <div class="ax-form-con">
+                                <div class="ax-form-input">
+                                    <div class="ax-row">
+                                        <div class="ax-flex-block">
+                                            <span class="ax-pos-left" style="width:2.4rem;"><i class="ax-iconfont ax-icon-shield-fill"></i></span>
+                                            <input name="username" placeholder="输入验证码..." value="" type="text"><span class="ax-pos-right"><a href="###" class="ax-iconfont ax-icon-close ax-val-none"></a></span>
+                                        </div>
+                                        <a href="###" class="ax-form-img"><img src="https://www.axui.cn/v1.0/examples/images/yanzhengma.jpg"></a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="ax-break-line ax-margin-lr"></div>
+
+                    <div class="ax-form-group">
+                        <div class="ax-flex-row">
+                            <div class="ax-form-con">
+                                <div class="ax-form-input">
+                                    <div class="ax-row">
+                                        <div class="ax-flex-block">
+                                            <label class="ax-checkbox"><input name="free-agree" value="0" checked="" type="checkbox"><span>记住密码</span></label>
+                                        </div>
+                                        <a href="###" class="ax-form-txt ax-color-ignore">忘记了密码？</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ax-form-group">
+                        <div class="ax-flex-row">
+                            <div class="ax-flex-block">
+                                <div class="ax-form-input"><button type="button" onclick="login()" class="ax-btn ax-primary ax-full ax-round">登录</button></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="###" class="btn-reg">没账号？立即注册</a>
+
+                    <div class="ax-break"></div>
+
+                </form>
+            </li>
+            <li class="block-reg" style="display:none;">
+                <form>
+
+                    <div class="ax-form-group">
+                        <div class="ax-flex-row">
+                            <div class="ax-form-con">
+                                <div class="ax-form-input"><span class="ax-pos-left" style="width: 2.4rem;"><i class="ax-iconfont ax-icon-me-fill"></i></span><input name="username" placeholder="输入名称" type="text"><span class="ax-pos-right"><a href="###" class="ax-iconfont ax-icon-close ax-val-none"></a></span></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ax-break-line ax-margin-lr"></div>
+
+                    <div class="ax-form-group">
+                        <div class="ax-flex-row">
+                            <div class="ax-form-con">
+                                <div class="ax-form-input"><span class="ax-pos-left" style="width:2.4rem;"><i class="ax-iconfont ax-icon-unlock-fill"></i></span>
+                                    <input name="password" placeholder="输入密码" type="password"><span class="ax-pos-right"><a href="###" class="ax-iconfont ax-icon-close ax-val-none"></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ax-break-line ax-margin-lr"></div>
+
+                    <div class="ax-form-group">
+                        <div class="ax-flex-row">
+                            <div class="ax-form-con">
+                                <div class="ax-form-input"><span class="ax-pos-left" style="width:2.4rem;"><i class="ax-iconfont ax-icon-lock-fill"></i></span>
+                                    <input name="password" placeholder="再次输入密码" type="password"><span class="ax-pos-right"><a href="###" class="ax-iconfont ax-icon-close ax-val-none"></a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="ax-break-line ax-margin-lr"></div>
+
+                    <div class="ax-form-group">
+                        <div class="ax-flex-row">
+                            <div class="ax-form-con">
+                                <div class="ax-form-input">
+                                    <div class="ax-row">
+                                        <div class="ax-flex-block">
+                                            <label class="ax-checkbox"><input name="free-agree" value="0" checked="" type="checkbox"><span>注册成功后立即登录</span></label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="ax-form-group">
+                        <div class="ax-flex-row">
+                            <div class="ax-flex-block">
+                                <div class="ax-form-input"><button type="button" class="ax-btn ax-primary ax-full ax-round">注册</button></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="###" class="btn-login">有账号？立即登录</a>
+
+                    <div class="ax-break"></div>
+
+                </form>
+            </li>
+        </ul>
+
+    </div>
+
+    <!--正文结束-->
+
+    <div class="footer">
+        &#xa9; 2022 <a href="" target="_self">alibaba.cn</a> <a href="" target="_blank" rel="nofollow">.</a>
+    </div>
+
+    <script src="js/jquery.min.js" type="text/javascript"></script>
+    <script src="js/ax.min.js" type="text/javascript"></script>    
+
+    <script type="text/javascript" src="js/login.js"></script>
+
+    <script type="text/javascript" >
+        //登录事件
+        function login(){
+            location.href = 'index.html';
+        }
+    </script>
+</body>
+
+</html>

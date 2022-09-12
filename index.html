@@ -1,0 +1,219 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="format-detection" content="email=no" />
+    <meta name="wap-font-scale"  content="no" />
+    <meta name="viewport" content="user-scalable=no, width=device-width" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>后台管理系统</title>
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <link href="css/font.css" rel="stylesheet" type="text/css" />
+    <link href="css/ax.css" rel="stylesheet" type="text/css" >
+    <link href="css/ax-response.css" rel="stylesheet" type="text/css" >
+    <link href="css/ax-admin.css" rel="stylesheet" type="text/css" >
+    <link href="plugins/loading/loading.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+<div class="ax-flex-row ax-admin">
+    <!--nav-->
+    <nav class="ax-flex-col">
+        <a href="##" class="ax-close-nav-all"><span class="ax-iconfont ax-icon-left"></span></a>
+        <div class="ax-nav-header">
+            <a href="##" class="ax-logo"><img src="images/ax-logo-white.png" /></a>
+            <a href="##" class="ax-close-nav ax-iconfont ax-icon-menu-fold"></a>
+        </div>
+        <div class="ax-flex-block ax-nav-main">
+            <ul class="ax-menu ax-menu-dark" id="menu-basic">
+                <li>
+                    <a target="info.html"><span class="ax-legend ax-iconfont ax-icon-home-fill"></span><span class="ax-name">系统主页</span><span class="ax-arrow ax-iconfont ax-icon-right"></span></a>
+                </li>
+                <li>
+                    <a href="##"><span class="ax-legend ax-iconfont ax-icon-settings-alt"></span><span class="ax-name">系统管理</span><span class="ax-arrow ax-iconfont ax-icon-right"></span></a>
+                    <ul>
+                        <li><a target="/pages/sys/org/index.html"><span class="ax-name">组织架构管理</span></a></li>
+                        <li><a target="/pages/sys/user/index.html">用户账户管理</span></a></li>
+                        <li><a target="/pages/sys/menu/index.html"><span class="ax-name">功能菜单管理</span></a></li>
+                        <li><a target="/pages/sys/role/index.html"><span class="ax-name">数据权限管理</span></a></li>
+                    </ul>
+                </li>
+                
+                <li>
+                    <a href="#"><span class="ax-legend ax-iconfont ax-icon-global"></span><span class="ax-name">系统监控</span><span class="ax-arrow ax-iconfont ax-icon-right"></span></a>
+                    <ul>
+                        <li><a target="/pages/monitor/server/index.html"><span class="ax-name">服务器监控</span></a></li>
+                        <li><a target="/pages/monitor/redis/index.html"><span class="ax-name">redis监控</span></a></li>
+                        <li><a href=""><span class="ax-name">nacos中心</span></a></li>
+                        <li><a href=""><span class="ax-name">sentnel中心</span></a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><span class="ax-legend ax-iconfont ax-icon-apply"></span><span class="ax-name">日志管理</span><span class="ax-arrow ax-iconfont ax-icon-right"></span></a>
+                    <ul>
+                        <li><a href=""><span class="ax-name">登入日志</span></a></li>
+                        <li><a href=""><span class="ax-name">操作日志</span></a></li>
+                        <li><a href=""><span class="ax-name">系统日志</span></a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#"><span class="ax-legend ax-iconfont ax-icon-message-o"></span><span class="ax-name">消息管理</span><span class="ax-arrow ax-iconfont ax-icon-right"></span></a>
+                    <ul>
+                        <li><a href=""><span class="ax-name">系统消息</span></a></li>
+                        <li><a href=""><span class="ax-name">邮箱消息</span></a></li>
+                        <li><a href=""><span class="ax-name">短息消息</span></a></li>
+                    </ul>
+                </li>
+                
+
+                <li>
+                    <a href="#" ><span class="ax-legend ax-iconfont ax-icon-repair"></span><span class="ax-name">配置中心</span><span class="ax-arrow ax-iconfont ax-icon-right"></span></a>
+                    <ul>
+                        <li><a href="#"><span class="ax-name">系统参数配置</span></a></li>
+                        <li><a href="#"><span class="ax-name">第三方接入</span></a></li>
+                        <li><a href="#"><span class="ax-name">第三方API</span></a></li>
+                        <li><a href="#"><span class="ax-name">定时任务</span></a></li>
+                        <li><a href="#"><span class="ax-name">数据回收站</span></a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" ><span class="ax-legend ax-iconfont ax-icon-pc-fill"></span><span class="ax-name">系统中心</span><span class="ax-arrow ax-iconfont ax-icon-right"></span></a>
+                    <ul>
+                        <li><a href="#"><span class="ax-name">数据统计</span></a></li>
+                        <li><a href="#"><span class="ax-name">应用统计</span></a></li>
+                    </ul>
+                </li>
+
+                <li>
+                    <a href="#" ><span class="ax-legend ax-iconfont ax-icon-cloud-upload"></span><span class="ax-name">文档中心</span><span class="ax-arrow ax-iconfont ax-icon-right"></span></a>
+                    <ul>
+                        <li><a href="#"><span class="ax-name">开发文档</span></a></li>
+                        <li><a href="#"><span class="ax-name">维护文档</span></a></li>
+                        <li><a href="#"><span class="ax-name">操作手册</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#"><span class="ax-legend ax-iconfont ax-icon-power"></span><span class="ax-name">退出系统</span></a>
+                </li>
+            </ul>
+            <div class="ax-mask"></div><!--收缩后的遮罩层，点击可重新展开菜单-->
+        </div>
+    </nav>    <!--end-->
+    <div class="ax-flex-block ax-body">
+        <div class="ax-flex-col">
+            <!--header-->
+            <header class="ax-flex-row">
+                <div class="ax-flex-block">
+                    <div class="ax-breadcrumb"><span class="ax-title ax-iconfont ax-icon-pin"></span><a href="###">首页</a><i class="ax-gutter">/</i><a href="###" >产品列表</a><i class="ax-gutter">/</i><span>产品详情</span></div>
+                </div>
+                <div class="ax-header-search"><input type="text" name="" placeholder="关键字..."/> <a href="##" class="ax-iconfont ax-icon-search"></a></div>
+                <div class="ax-header-icons">
+                    <a href="##" class="ax-iconfont ax-icon-bell-fill"><span class="ax-dot ax-bg-danger"></span></a>
+                    <a href="##" class="ax-iconfont ax-icon-email-fill"><span class="ax-badge ax-badge-primary">2</span></a>
+                </div>
+                <div class="ax-header-user" id="user">
+                    <a href="##" class="ax-avatar ax-round ax-xs" style="background-image: url(images/head02.jpg),url(images/loading.svg)"></a>
+                    <a href="##">张凤阳</a>
+                </div>
+                <a href="##" class="ax-open-aside ax-iconfont ax-icon-left-double"></a>
+            </header>
+            <!--main-->
+            <main class="ax-flex-block" id="iframe">
+                <!--jquery 插入html 位址-->
+            </main>
+            <!--footer-->
+            <footer>
+                &#xa9; 2021 <a href="" target="_self">alibaba.com</a>
+            </footer>        
+        </div>
+    </div>
+    <!--sider-->
+    <aside class="ax-flex-col">
+
+        <div class="ax-flex-row ax-aside-header">
+            <div class="ax-flex-block"><span class="ax-title">伟大的中国</span></div>
+            <a href="###" class="ax-close-aside ax-iconfont ax-icon-close"></a>
+        </div>
+
+        <div class="ax-flex-block ax-aside-main ax-scroll">
+
+            <div class="ax-article ax-padding">
+                <img src="images/full01.jpg">
+                <p>操作说明</p>
+            </div>
+
+        </div>
+        <div class="ax-aside-footer">
+            <a href="###" class="demo-aside-more">查看更多</a>
+        </div>
+    </aside>
+</div>
+
+<script src="js/jquery.min.js" type="text/javascript"></script>
+<script src="js/ax.min.js" type="text/javascript"></script>
+<script src="js/ax-admin.js" type="text/javascript"></script>
+<script src="js/svgSprites.js" type="text/javascript"></script>
+<script src="js/public.js" type="text/javascript"></script>
+<script src="plugins/loading/loading.js" type="text/javascript" ></script>
+<script type='text/javascript'>
+    function callFun(){ 
+        initLoading({type:"stop"}); 
+    }
+    //login out
+    function logout(){
+            console.log("login out.");
+            location.href = 'login.html'
+        }
+    $(document).ready(function() {
+        /** 页面加载等待 */
+        initLoading({type:"start"});
+        setTimeout("callFun()",1500);
+        /** 设置菜单 */
+        $('#menu-basic').axMenu({cookie: true });
+        if(platformIs == 'pc'){$(".ax-nav-main,main").axScroll({horizrailenabled:false});}//只在笔记本和桌面电脑使用美化滚动而且禁止水平滚动
+        $('#user').axPopup({
+            content:'<a href="###" class="ax-info-block">我的好友</a><div class="ax-break-line"></div><a href="###" class="ax-info-block">系统消息</a><div class="ax-break-line"></div><a onclick = "logout()" class="ax-info-block">个人资料</a><div class="ax-break-line"></div><a onclick = "logout()" class="ax-info-block">退出</a>',
+            placement:'bottom',
+            padding:false,
+            trigger:'hover',
+        });
+        /** 加载嵌入页面 */
+        $.get("info.html",function(data){
+            $("#iframe").html(data);//初始化加载界面
+        });
+        $('#menu-basic li ul li').click(function(){//点击li加载界面
+            var current = $(this),
+            target = current.find('a').attr('target'); // 找到链接a中的targer的值
+            console.log(target);
+            $.get(target,function(data){
+                $("#iframe").html(data); 
+            });
+        });
+
+        $('#menu-basic li').click(function(){//点击li加载界面
+            var current = $(this),
+            target = current.find('a').attr('target'); // 找到链接a中的targer的值
+            console.log(target);
+            if(target!=null && target!='##'){
+                $.get(target,function(data){
+                    $("#iframe").html(data); 
+                });
+            }
+            
+        });
+
+        
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,221 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="format-detection" content="email=no" />
+    <meta name="wap-font-scale"  content="no" />
+    <meta name="viewport" content="user-scalable=no, width=device-width" />
+    <meta content="telephone=no" name="format-detection" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>组织机构</title>
+    <link href="../../../css/font.css" rel="stylesheet" type="text/css" />
+    <link href="../../../css/ax.css" rel="stylesheet" type="text/css" >
+    <link href="../../../css/ax-response.css" rel="stylesheet" type="text/css" >
+</head>
+<body>
+
+<div class="ax-padding">
+
+    <div class="ax-row ax-split">
+        <!-- 主页页面 -->
+        <div class="ax-col ax-col-20"><section class="demo-section-border">
+            <div class="ax-grid ax-space-md">
+                <ul class="ax-grid-inner">
+                    <li class="ax-grid-block ax-col-24"><section class="demo-section-border">
+                        <div class="ax-search ax-dark">
+                            <div class="ax-search-center">
+                                <i class="ax-iconfont ax-icon-search ax-adorn"></i>
+                                <input name="username" placeholder="输入关键字..." type="text" data-list="Apple苹果, Banana香蕉, Tomato西红柿, Grape葡萄, Haw山楂, Lemon柠檬, Orange橙子">
+                                <span class="ax-operate"><a href="###" class="ax-iconfont ax-icon-close ax-reset"></a><a href="###" class="ax-iconfont ax-icon-mic"></a><a href="###" class="ax-iconfont ax-icon-camera"></a><a href="###" class="ax-iconfont ax-icon-down ax-toggle"></a></span>
+                            </div>
+                            <a href="###" class="ax-search-end">搜索一下</a>
+                        </div>                                        
+                    </section></li>
+                    <li class="ax-grid-block ax-col-24"><section class="demo-section-border">
+                        <!-- 权限按钮 -->
+                        <div class="ax-flex-row">
+                            <div class="ax-flex-block ax-align-left">
+                                <span class="ax-buoy"><i>总访问</i><i>256</i></span>
+                                <span class="ax-buoy ax-primary"><i>总新增</i><i>256</i></span>
+                                <span class="ax-buoy ax-success"><i>总编辑</i><i>256</i></span>
+                                <span class="ax-buoy ax-danger"><i>总删除</i><i>256</i></span>
+
+                            </div>
+                            <div class="ax-flex-block ax-align-right">
+                                <a onclick="add()" class="ax-btn ax-primary ax-xs">添加</a>
+                                <a href="###" class="ax-btn ax-primary ax-xs">导出</a>
+                            </div>
+                        </div>
+                        <div class="ax-break-md"></div>
+                        <ul class="ax-tree ax-tree-table" id="tree10"></ul>
+                    </section></li>
+                </ul>
+            </div>
+        </section></div>
+    </div>
+
+    <!-- 抽屉新增 编辑页面 -->
+    <div class="ax-drawer" id="drawer01">
+        <div class="ax-drawer-overlay"></div>
+        <form id="regForm" >
+            <div class="ax-drawer-contain">
+                <a href="###" class="ax-drawer-close"><i class="ax-iconfont ax-icon-close"></i></a>
+                <div class="ax-drawer-title"><div class="ax-col ax-align-center">新增组织机构</div></div>
+                <div class="ax-break-line"></div>
+                <div class="ax-drawer-content">
+                    <div class="ax-padding">
+                        <div class="ax-form-group">
+                            
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">上级编号</div>
+                                <div class="ax-form-input"><input name="1" readonly type="text"></div>
+                            </div>
+                            <div class="ax-break-md"></div>
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">上级名称</div>
+                                <div class="ax-form-input"><input name="2" readonly type="text"></div>
+                            </div>
+                            <div class="ax-break-md"></div>
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">机构名称</div>
+                                <div class="ax-form-input"><input id="name" name="name" placeholder="输入机构名称" type="text"></div>
+                            </div>
+                            <div class="ax-break-md"></div>
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">机构编号</div>
+                                <div class="ax-form-input"><input name="3" placeholder="输入机构编号" type="text"></div>
+                            </div>
+                            <div class="ax-break-md"></div>
+                            <div class="ax-flex-row">
+                                <div class="ax-form-label">状态</div>
+                                <div class="ax-form-input"><input name="4" type="text"></div>
+                            </div>
+                            <div class="ax-break-md"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="ax-break-line"></div>
+                <div class="ax-row ax-drawer-operate">
+                    <a onclick="reset()" class="ax-col ax-col-12 ax-color-ignore">取消</a>
+                    <span class="ax-gutter-line"></span>
+                    <a onclick="submit()" class="ax-col ax-col-12">确定</a>
+                </div>
+            </div>
+        </form>
+        
+    </div>
+    
+     
+</div>
+
+<script src="../../../js/jquery.min.js" type="text/javascript"></script>
+<script src="../../../js/ax.min.js" type="text/javascript"></script>
+<script src="../../../main.js" type="text/javascript"></script>
+<script type="text/javascript" src="../../../plugins/axTree/jquery.ztree.all.min.js"></script>
+<script type="text/javascript" src="../../../plugins/validate/jquery.validate.min.js"></script>
+<script type='text/javascript'>
+    function submit(){
+        $("#regForm").submit()
+    }
+    function reset(){
+        $("#regForm")[0].reset()
+    }
+    
+    $("#regForm").validate({
+        debug:true,
+        rules: {
+            name: "required"
+        },
+        messages: {
+            name: "<div class='ax-color-danger'><span class='ax-iconfont ax-icon-close-o-fill'></span> 请输入用户名！</div>"
+        }
+    });
+
+
+</script>
+
+<script src="../../api/org/index.js" type="text/javascript"></script>
+
+<script type='text/javascript'>
+    function addTree(id){
+        console.log("新增："+id);
+        $("#drawer01").addClass("ax-drawer-show");
+
+    }
+    function editTree(id){
+        console.log("编辑："+id);
+        $("#drawer01").addClass("ax-drawer-show");
+    }
+    function removeTree(id){
+        console.log("删除："+id);
+    }
+
+    var zTreeNodes;
+      var setting10 = {
+          view: {
+              showLine: false,
+              showIcon: false,
+              addDiyDom: addTable
+          },
+          data: {
+              simpleData: {
+                  enable: true
+              }
+          },
+          edit: {
+              enable: true,
+              showRemoveBtn: false,
+              showRenameBtn: false
+          },
+      };
+   
+      function addTable(treeId, treeNode) {
+          var spaceWidth = 22;
+          var liObj = $("#" + treeNode.tId);
+          var aObj = $("#" + treeNode.tId + "_a");
+          var switchObj = $("#" + treeNode.tId + "_switch");
+          var icoObj = $("#" + treeNode.tId + "_ico");
+          var spanObj = $("#" + treeNode.tId + "_span");
+   
+          aObj.attr('title', '');
+          aObj.append('<div class="tree-switch"></div>');
+          var divSwitch = $(liObj).find('div').eq(0);
+          switchObj.remove();
+          spanObj.remove();
+          icoObj.remove();
+          divSwitch.append(switchObj);
+          divSwitch.append(spanObj);
+   
+          var spaceStr = '<i class="ident" style="width:" + (spaceWidth * treeNode.level) + "px"></i>';
+          switchObj.before(spaceStr);
+          var editStr = '';
+          editStr += '<div class="tree-td">' + (treeNode.zip == null ? '-' : treeNode.zip) + '</div>';
+          editStr += '<div class="tree-td">' + (treeNode.agency == null ? '-' : treeNode.people) + '</div>';
+          editStr += '<div class="tree-td">' + (treeNode.people == null ? '-' : treeNode.people ) + '</div>';
+          editStr += '<div class="tree-opt"><span class="button add" onclick="addTree(' + treeNode.id + ')"></span><span class="button edit" onclick="editTree(' + treeNode.id + ')"></span><span class="button remove" onclick="removeTree(' + treeNode.id + ')"></span></div>';
+          aObj.append(editStr);
+   
+      }
+   
+   
+      function query() {
+          var data=[{"id":"1","pId":"0","name":"北京市","open":true,"zip":"100000","agency":"直辖市","people":2153,},{"id":"2","pId":"1","name":"朝阳区","zip":"100020","agency":"市辖区","people":360,},{"id":"3","pId":"1","name":"丰台区","zip":"100071","agency":"市辖区","people":202,},{"id":"4","pId":"1","name":"海淀区","zip":"100089","agency":"市辖区","people":335,},{"id":"5","pId":"0","name":"广东省","open":true,"zip":"51-52","agency":"省","people":11521,},{"id":"6","pId":"5","name":"广州市","open":false,"zip":"510000","agency":"地级市","people":1530,},{"id":"7","pId":"6","name":"花都区","zip":"510800","agency":"市辖区","people":78,},{"id":"8","pId":"6","name":"番禺区","zip":"511400","agency":"市辖区","people":171,},{"id":"9","pId":"6","name":"越秀区","zip":"510030","agency":"市辖区","people":117,},{"id":"10","pId":"5","name":"深圳市","open":false,"zip":"518000","agency":"地级市","people":1343,},{"id":"11","pId":"10","name":"福田区","zip":"518000","agency":"市辖区","people":163,},{"id":"12","pId":"10","name":"罗湖区","zip":"518001","agency":"市辖区","people":103,},{"id":"13","pId":"10","name":"龙岗区","zip":"518116","agency":"市辖区","people":250,},{"id":"14","pId":"5","name":"河源市","zip":"517000","agency":"设区的市","people":372,},{"id":"15","pId":"0","name":"湖南省","open":false,"zip":"410011-427000","agency":"省","people":6918,},{"id":"16","pId":"15","name":"长沙市","zip":"410000","agency":"地级市","people":839,},{"id":"17","pId":"15","name":"永州市","zip":"425000","agency":"地级市","people":545,},{"id":"18","pId":"15","name":"株洲省","zip":"412000","agency":"地级市","people":402,},{"id":"19","pId":"0","name":"湖北省","open":false,"zip":"430000-443000","agency":"省","people":5927,},{"id":"20","pId":"19","name":"武汉市","zip":"430000","agency":"地级市","people":1121,},{"id":"21","pId":"19","name":"襄阳市","zip":"441000","agency":"地级市","people":605,},{"id":"22","pId":"19","name":"荆州市","zip":"434000","agency":"地级市","people":641,},{"id":"23","pId":"19","name":"九江市","zip":"332000","agency":"地级市","people":489,},{"id":"24","pId":"0","name":"上海市","zip":"200000","agency":"直辖市","people":2428,},];
+          zTreeNodes = data;
+          $.fn.zTree.init($("#tree10"), setting10, zTreeNodes);
+          var li_head = ' <li class="tree-head"><a><div class="tree-switch">城市</div><div class="tree-td">邮编</div><div class="tree-td">行政级别</div>' +
+            '<div class="tree-td">人口(万)</div><div class="tree-opt">操作</div></a></li>';
+          $("#tree10").find('li').eq(0).before(li_head)
+        }
+
+        $(function () {
+        query();
+        });
+   
+  </script>
+  
+</body>
+</html>
